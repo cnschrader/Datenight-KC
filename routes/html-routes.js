@@ -25,8 +25,9 @@ module.exports = function(app) {
   // blog route loads blog.html
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
+  })
 
-    app.get("/recBuild", function(req, res) {
+  app.get("/recBuild", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/recBuild.html"));
   });
 
@@ -34,5 +35,5 @@ module.exports = function(app) {
   app.get("*", function(req, res) {
     res.render("404");
   });
-  })
+
 };

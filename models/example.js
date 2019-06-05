@@ -1,14 +1,22 @@
 module.exports = function(sequelize, DataTypes) {
   var Recommendations = sequelize.define("Recommendations", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+    name: DataTypes.STRING,
+    link: DataTypes.STRING,
+    photo: DataTypes.STRING,
+    type: DataTypes.STRING,
   });
   return Recommendations;
 };
 module.exports = function(sequelize, DataTypes) {
   var Users = sequelize.define("Users", {
-    text: DataTypes.STRING,
-    description: DataTypes.TEXT
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        len: [1]
+      }
+    },
+    scores: DataTypes.INTEGER
   });
   return Users;
 };

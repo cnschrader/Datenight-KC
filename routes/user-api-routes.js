@@ -4,7 +4,6 @@ module.exports = function(app) {
   
   app.get("/api/users", function(req, res) {
     db.User.findAll({
-      include: [db.Burger]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
@@ -15,7 +14,6 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Burger]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
@@ -30,8 +28,8 @@ module.exports = function(app) {
 
   app.put("/api/users", function(req, res) {
     db.User.update(
-      req.body,
-      {
+      req.body
+      , {
         where: {
           id: req.body.id
         }

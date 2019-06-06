@@ -25,10 +25,15 @@ module.exports = function(app) {
   // blog route loads blog.html
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
+  })
+
+  app.get("/recBuild", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/recBuild.html"));
   });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
   });
+
 };

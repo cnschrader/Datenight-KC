@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS customers;
-CREATE DATABASE customers;
-
-DROP DATABASE IF EXISTS suggestions;
-CREATE DATABASE suggestions;

@@ -3,6 +3,7 @@ $(function() {
   var userID;
   if (url.indexOf("?user_id=") !== -1) {
     userID = url.split("=")[1];
+    return userID;
   }
   $(".survey-form").on("submit", function(event) {
     event.preventDefault();

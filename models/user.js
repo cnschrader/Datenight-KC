@@ -24,12 +24,12 @@ module.exports = function(sequelize, DataTypes) {
 
   });
 
-  User.prototype.validPassword = function(password) {
+  Users.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
   
-  User.hook("beforeCreate", function(user) {
-    user.password = bcrypt.hashSync(user.password, bcrypt.genSaltSync(10), null);
+  Users.hook("beforeCreate", function(users) {
+    users.password = bcrypt.hashSync(users.password, bcrypt.genSaltSync(10), null);
   });
 
   return Users;

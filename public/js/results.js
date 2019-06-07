@@ -1,10 +1,11 @@
+var url = window.location.search;
+var userID;
+if (url.indexOf("?user_id=") !== -1) {
+  userID = url.split("=")[1];
+}
+console.log(userID)
+
 $(function() {
-  var url = window.location.search;
-  var userID;
-  if (url.indexOf("?user_id=") !== -1) {
-    userID = url.split("=")[1];
-    return userID;
-  }
   var suggestionsArray = [];
   var testArray = [
     "9sports",
@@ -17,8 +18,7 @@ $(function() {
     "4outdoor",
     "1comedy"
   ]
-  function showSuggestions() {
-    $("#suggestiondiv")
+  function displayResults() {
     console.log(suggestionsArray[0].name);
     console.log(suggestionsArray[0].description);
     console.log(suggestionsArray[0].IMG);
@@ -26,14 +26,26 @@ $(function() {
     suggestionsArray.splice(0, 1);
   }
 
-  $.get("api/recommendations", function(res) {
-    for(var i = 0; i < testArray.length; i++) {
-      for(var j = 0 ; j < res.length; j++) {
-        if (testArray[i].substring(1) === res[j].category){
-          suggestionsArray.push(res[j]);
+  //This request gets all recommendations from the database,
+  //THEN it compares them to the user's scores to sort the in order of appeal
+  $.get("api/users", function (data){
+    testArray = data.scores;
+    $.get("api/recommendations", function(res) {
+      for(var i = 0; i < testArray.length; i++) {
+        for(var j = 0 ; j < res.length; j++) {
+          if (testArray[i].substring(1) === res[j].category){
+            suggestionsArray.push(res[j]);
+          };
         };
       };
-    };
-    showSuggestions();
+      displayResults();
+    });
+  })
+
+  $(".get").on("click", function (event) {
+    event.preventDefault();
+
+    displayResults();
   });
+
 });

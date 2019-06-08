@@ -10,22 +10,56 @@
   <script src="/js/results.js"></script>
   <title>Results Test</title>
 </head>
-<body class="site">
-	<div class="container content">
-  
-    <h1>Your results</h1>
-    
-    <h2>Judging by your survey, we though you might like</h2>
-    
-    <div class="row result-container">
-      <div class="col-8">
-        <h1 id="name"></h1>
-        <h3 id="description"></h3>
-        <div id="IMG"></div>
-      </div>
-      <div class="col-4">
-        <button class="link">SURE!</button>
-        <button class="veto">VETO</button>
+<body class="kcImg">
+  	<div id="home">
+        <div class="container">
+          <div class="row about">
+            <div class="col-12" id="tagline">
+              <h1 class="logo">Date Night KC</h1>
+              <ul class="nav justify-content-end">
+                <li class="nav-item">
+                  <a class="nav-link active" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/survey">Survey</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/reviews">Reviews</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/signup">Sign Up</a>
+                </li>
+              </ul>
+              <!-- <h1>{{msg}}</h1> -->
+            </div>
+          </div>
+          <br>
+          <br>
+	<div class="row">
+    <div class="col-12">  
+      <br>
+      <h1>Your results</h1>
+      <br>
+      <div class="card bg-dark text-white">
+          <img src="./images/netflix.gif" class="img-fluid card-img" id="IMG" alt="netflix and chill">
+        <div class="card-img-overlay">
+          <div class="card-header">
+          Judging by your survey, we though you might like:
+          </div>
+          <div class="card-body">
+            <div class="col-8">
+              <blockquote class="blockquote mb-0">
+                <h1 id="name"></h1>
+                <footer class="blockquote-footer" id="description"><cite title="Source Title"></cite></footer>
+                <button class="link">SURE!</button>
+                <button class="veto">VETO</button>
+              </blockquote>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -6,6 +6,8 @@
 // =============================================================
 var path = require("path");
 
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -32,6 +34,9 @@ module.exports = function(app) {
   });
   app.get("/reviews", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/reviews.html"));
+  });
+  app.get("/api/signup", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
 
   // Render 404 page for any unmatched routes

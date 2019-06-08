@@ -1,4 +1,5 @@
 var db = require("../models");
+var Sequelize = require("sequelize");
 
 var passport = require("../config/passport");
 
@@ -15,11 +16,12 @@ module.exports = function(app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function(req, res) {
-    console.log(req.body);
     db.Users.create({
+      name: req.body.name,
       email: req.body.email,
       password: req.body.password
     }).then(function() {
+      console.log("user-api-routes name= " + req.body.name);
       res.redirect(307, "/api/login");
     }).catch(function(err) {
       console.log(err);
@@ -59,7 +61,7 @@ module.exports = function(app) {
   });
 
   app.get("/api/users/:id", function(req, res) {
-    db.User.findOne({
+    db.User.findAll({
       where: {
         id: req.params.id
       },

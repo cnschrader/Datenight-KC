@@ -6,6 +6,8 @@ var session = require("express-session");
 // Requiring passport in the config folder
 var passport = require("./config/passport");
 
+var sessionKey = require("./config/keys.js");
+
 
 var db = require("./models");
 
@@ -17,7 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
 
-app.use(session({ secret: session.secret, resave: true, saveUninitialized: true }));
+app.use(session({ secret: sessionKey.sessions.secret, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 

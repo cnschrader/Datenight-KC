@@ -2,10 +2,12 @@
   line-height: 2.5;
 }
 
+
 .site{
   background: url(./img/alex-iby-371384-unsplash.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%; 
+  background-color: rgb(23, 17, 17);
 }
 
 header{
@@ -27,7 +29,7 @@ header{
   color: white
 }
 
-.survey{
+.survey,h2,h3{
   color: white;
 }
 .footer{
@@ -39,5 +41,5 @@ header{
 .kcImg{
   background: url(./img/kc-skyline.jpg);
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100%;
 }

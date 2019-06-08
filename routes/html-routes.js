@@ -14,7 +14,7 @@ module.exports = function(app) {
 
   // index route loads view.html
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
+    res.render("index");
   });
 
   // cms route loads cms.html
@@ -25,10 +25,13 @@ module.exports = function(app) {
   // blog route loads blog.html
   app.get("/survey", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/survey.html"));
-  })
+  });
 
   app.get("/recBuild", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/recBuild.html"));
+  });
+  app.get("/reviews", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/reviews.html"));
   });
 
   // Render 404 page for any unmatched routes

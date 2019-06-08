@@ -30,3 +30,14 @@ header{
 .survey{
   color: white;
 }
+.footer{
+  color:blue;
+  font-size: 2em;
+  text-align: center;
+}
+
+.kcImg{
+  background: url(./img/kc-skyline.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

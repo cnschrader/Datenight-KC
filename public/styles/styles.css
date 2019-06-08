@@ -29,17 +29,40 @@ header{
   color: white
 }
 
-.survey,h2,h3{
+.survey,h2,h3, h4{
   color: white;
 }
 .footer{
-  color:blue;
+  color:white;
   font-size: 2em;
   text-align: center;
+  background-color: gray;
 }
 
 .kcImg{
   background: url(./img/kc-skyline.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+}
+.surveyImg{
+  background: url(./img/nelson-atkins-shuttlecock-v2.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.surCard{
+  margin-bottom: 4%;
+  background-color: rgba(245, 245, 245, 0.7);
+}
+.reviews{
+  margin-bottom: 4%;
+  background-color: rgba(245, 245, 245, 0.9);
+}
+
+#surveyBtn{
+  margin-bottom: 10%;
+}
+
+.welcome{
+  text-align: center;
 }

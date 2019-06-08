@@ -48,7 +48,7 @@ $(function() {
     });
   })
 
-  $(".get").on("click", function (event) {
+  $(".veto").on("click", function (event) {
     event.preventDefault();
 
     displayResults();

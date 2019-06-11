@@ -25,7 +25,7 @@ module.exports = function(app) {
   //   // res.render("results");
   // });
   // survey route loads survey handlebars
-  app.get("/survey", function(req, res) {
+  app.get("/survey/:id?", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/survey.html"));
     res.render("survey");
   });

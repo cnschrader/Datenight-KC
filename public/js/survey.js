@@ -5,18 +5,20 @@ $(function() {
     userID = url.split("=")[1];
     return userID;
   }
-  $(".survey-form").on("submit", function(event) {
+  $("#survey-form").on("submit", function(event) {
     event.preventDefault();
+    var sports = $("[name=sportsVal]:checked").val();
+    console.log("sports" + sports);
     var newSurvey = {
-      sportsRank: $("#sportsRank").val().trim(),
-      musicRank: $("#musicRank").val().trim(),
-      comedyRank: $("#comedyRank").val().trim(),
-      museumRank: $("#museumRank").val().trim(),
-      moviesRank: $("#moviesRank").val().trim(),
-      animalsRank: $("#animalsRank").val().trim(),
-      activeRank: $("#activeRank").val().trim (),
-      outdoorRank: $("#outdoorRank").val().trim(),
-      shoppingRank: $("#shoppingRank").val().trim(),
+      sportsRank: $("[name=sportsVal]:checked").val(),
+      musicRank: $("[name=musicVal]:checked").val(),
+      comedyRank: $("[name=comedyVal]:checked").val(),
+      museumRank: $("[name=museumVal]:checked").val(),
+      moviesRank: $("[name=moviesVal]:checked").val(),
+      animalsRank: $("[name=animalsVal]:checked").val(),
+      activeRank: $("[name=activeVal]:checked").val(),
+      outdoorRank: $("[name=outdoorsVal]:checked").val(),
+      shoppingRank: $("[name=shoppingVal]:checked").val(),
     };
     
     if (
@@ -31,27 +33,29 @@ $(function() {
       newSurvey.shoppingRank !== ""
       ) {
         var newScoreArray = [
-          newSurvey.sportsRank + "sports",
-          newSurvey.musicRank + "music",
-          newSurvey.comedyRank + "comedy",
-          newSurvey.museumRank + "museum",
-          newSurvey.moviesRank + "movies",
-          newSurvey.animalsRank + "animals",
-          newSurvey.activeRank + "active",
-          newSurvey.outdoorRank + "outdoor",
-          newSurvey.shoppingRank + "shopping",
+          newSurvey.sportsRank,
+          newSurvey.musicRank,
+          newSurvey.comedyRank, 
+          newSurvey.museumRank,
+          newSurvey.moviesRank,
+          newSurvey.animalsRank,
+          newSurvey.activeRank,
+          newSurvey.outdoorRank,
+          newSurvey.shoppingRank, 
         ];
+        console.log("newScoreArray" + newScoreArray)
+        console.log("userID" + userID)
         var userUpdate = {
           scores: newScoreArray.sort(),
           id: userID
         }
         $.ajax({
           method: "PUT",
-          url: "/api/users",
-          data : userUpdate
+          url: "/api/users/"+ userID,
+          data : newScoreArray
         }).then(
           function() {
-            console.log(data);
+            console.log("yoyo");
         }
       );
     } else {

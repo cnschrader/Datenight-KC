@@ -2,12 +2,14 @@
   line-height: 2.5;
 }
 
-
 .site{
-  background: url(./img/alex-iby-371384-unsplash.jpg);
+  /* background: url(./img/alex-iby-371384-unsplash.jpg);
   background-repeat: no-repeat;
   background-size: 100%; 
-  background-color: rgb(23, 17, 17);
+  background-color: rgb(23, 17, 17); */
+  background: url(./img/kc-skyline.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 header{
@@ -54,7 +56,7 @@ header{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.7);
 }
-.reviews{
+.reviews, .login{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.9);
 }
@@ -65,4 +67,30 @@ header{
 
 .welcome{
   text-align: center;
+}
+
+.logo-img{
+  float: left;
+}
+
+.loginImg{
+  background: url(./img/loginImg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#loginTitle, #signUpTitle{
+  color: black;
+  text-align: center;
+}
+
+.loginTag{
+  text-align: center;
+}
+
+.login, .reviews, .surCard{
+  box-shadow: 0 19px 38px 
+  rgba(0,0,0,0.30), 
+  0 15px 12px 
+  rgba(0,0,0,0.22);
 }

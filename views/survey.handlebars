@@ -3,11 +3,11 @@
       <br>
       <div class="row ">
         <div class="col-12 col-sm-6">
-          <h3>Let's get started planning that perfect date!</h3>
-          <h4>Take this quick survey</h4>
-          <h4>Rate your answers on a scale of 1-10</h4>
-          <h4>(1)-I  completely disagree! || (10)-I agree wholeheartedly!</h4>
-          <br>
+          <h3 class="surveyTag">Let's get started planning that perfect date!</h3>
+          <h4 class="surveyTag">Take this quick survey. Rate your answers on a scale of 1-10</h4>
+          {{!-- <h4>Rate your answers on a scale of 1-10</h4> --}}
+          <h5 class="surveyTag">(1)-I  completely disagree! || (10)-I agree wholeheartedly!</h5>
+          {{!-- <br> --}}
           <div class="card surCard">
             <div class="card-body">
               <form class="clearfix mb-4" action="POST" id="survey-form">
@@ -523,23 +523,6 @@
           </div>
         </div>
       </div>
-      <!-- <div class="row">
-				<div class="col-12">
-					<h1>Itinerary</h1>
-					<br>
-					<h3>Your Date is Planned!</h3>
-					<ul id="example-list" class="list-group">
-						{{#each examples}}
-						<li data-id="{{this.id}}" class="list-group-item">
-							<a href="example/{{this.id}}">{{this.text}}</a>
-							<button class="btn btn-danger float-right delete">ｘ</button>
-						</li>
-						{{/each}}
-					</ul>
-				</div>
-			</div> -->
     </div>
-  
-  {{!-- <script src="/js/index.js"></script> --}}
 
 </body>

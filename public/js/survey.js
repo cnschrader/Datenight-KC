@@ -9,17 +9,17 @@ $(function() {
     event.preventDefault();
     var sports = $("[name=sportsVal]:checked").val();
     console.log("sports" + sports);
-    var newSurvey = {
-      sportsRank: $("[name=sportsVal]:checked").val(),
-      musicRank: $("[name=musicVal]:checked").val(),
-      comedyRank: $("[name=comedyVal]:checked").val(),
-      museumRank: $("[name=museumVal]:checked").val(),
-      moviesRank: $("[name=moviesVal]:checked").val(),
-      animalsRank: $("[name=animalsVal]:checked").val(),
-      activeRank: $("[name=activeVal]:checked").val(),
-      outdoorRank: $("[name=outdoorsVal]:checked").val(),
-      shoppingRank: $("[name=shoppingVal]:checked").val(),
-    };
+    var newScoreArray = [
+      $("[name=sportsVal]:checked").val(),
+      $("[name=musicVal]:checked").val(),
+      $("[name=comedyVal]:checked").val(),
+      $("[name=museumVal]:checked").val(),
+      $("[name=moviesVal]:checked").val(),
+      $("[name=animalsVal]:checked").val(),
+      $("[name=activeVal]:checked").val(),
+      $("[name=outdoorsVal]:checked").val(),
+      $("[name=shoppingVal]:checked").val(),
+    ];
     
     if (
       newSurvey.sportsRank !== "" &&

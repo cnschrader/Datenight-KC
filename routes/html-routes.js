@@ -18,10 +18,10 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/index.html"));
     if (req.user) {
-      res.redirect("/");
+      return res.render("index");
     }
     // res.sendFile(path.join(__dirname, "../public/signup.html"));
-    res.render("signup");
+    res.redirect("/signup");
   });
   // cms route loads cms.html
   // app.get("/results", function(req, res) {
@@ -29,7 +29,7 @@ module.exports = function(app) {
   //   // res.render("results");
   // });
   // survey route loads survey handlebars
-  app.get("/survey", function(req, res) {
+  app.get("/survey", isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/survey.html"));
     res.render("survey");
   });
@@ -44,7 +44,7 @@ module.exports = function(app) {
     res.render("reviews");
   });
   // signup route loads signup handlebars
-  app.get("/api/signup", function(req, res) {
+  app.get("/signup", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/signup.html"));
     res.render("signup");
   });
@@ -52,7 +52,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
 
     if (req.user) {
-      res.redirect("/");
+     return res.redirect("/survey");
     }
      // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("login");

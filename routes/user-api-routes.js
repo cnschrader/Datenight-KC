@@ -79,13 +79,13 @@ module.exports = function(app) {
 
   app.put("/api/users/:id", function(req, res) {
     db.User.update({
-      scores: req.body.scores
+      scores: req.body
     }, {
         where: {
           id: req.params.id
         }
       }).then(function(dbPost) {
-      console.log("heyhey");
+      res.json(dbPost);
     });
   });
 

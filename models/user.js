@@ -9,7 +9,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    scores: DataTypes.INTEGER,
+    scores: DataTypes.STRING,
     email: {
       type: DataTypes.STRING,
       allowNull: false,

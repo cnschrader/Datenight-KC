@@ -58,7 +58,7 @@ module.exports = function(app) {
 
   
   app.get("/api/users", function(req, res) {
-    db.User.findAll({
+    db.Users.findAll({
     }).then(function(dbUser) {
       res.json(dbUser);
     });
@@ -75,15 +75,15 @@ module.exports = function(app) {
   });
 
   app.post("/api/users", function(req, res) {
-    db.User.create(req.body)
+    db.Users.create(req.body)
       .then(function(dbUser) {
         res.json(dbUser);
       });
   });
 
   app.put("/api/users/:id", function(req, res) {
-    db.User.update({
-      scores: req.body.scores
+    db.Users.update({
+      scores: JSON.stringify(req.body)
     }, {
         where: {
           id: req.params.id
@@ -94,7 +94,7 @@ module.exports = function(app) {
   });
 
   app.delete("/api/users/:id", function(req, res) {
-    db.User.destroy({
+    db.Users.destroy({
       where: {
         id: req.params.id
       }

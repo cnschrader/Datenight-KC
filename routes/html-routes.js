@@ -18,10 +18,15 @@ module.exports = function(app) {
   app.get("/", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/index.html"));
     if (req.user) {
-      return res.render("index");
-    }
+      console.log("html routes req.user.id " + req.user.id)
+      var hbsObject = {
+        user: req.user
+      };
+      res.render("index", hbsObject);
+    }else{
     // res.sendFile(path.join(__dirname, "../public/signup.html"));
     res.redirect("/signup");
+    }
   });
   // cms route loads cms.html
   // app.get("/results", function(req, res) {
@@ -29,13 +34,16 @@ module.exports = function(app) {
   //   // res.render("results");
   // });
   // results route loads results handlebars
-  app.get("/results", function(req, res) {
+  app.get("/results/:userID?", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/results.html"));
     res.render("results");
   });
   // survey route loads survey handlebars
   
-  app.get("/survey/:id?", isAuthenticated, function(req, res) {
+  app.get("/survey/:userID?", isAuthenticated, function(req, res) {
+    if (!req.user) {
+     return res.redirect("/login");
+    }
     // res.sendFile(path.join(__dirname, "../public/survey.html"));
     res.render("survey");
   });
@@ -58,7 +66,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
 
     if (req.user) {
-     return res.redirect("/survey");
+     return res.redirect("/survey/userID=" +req.user.id);
     }
      // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("login");

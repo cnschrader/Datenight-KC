@@ -1,6 +1,6 @@
 var url = window.location.search;
-var userID = url.split("=")[1];
 $(function() {
+  var userID = url.split("=")[1];
 
   $("#survey-form").on("submit", function(event) {
     event.preventDefault();
@@ -24,7 +24,8 @@ $(function() {
       data : newScoreArray.toString()
     }).then(
       function() {
-        console.log("yoyo");
+      // window.location.replace("/");
+      console.log('hoorya')
     });
   });
 });

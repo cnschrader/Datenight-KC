@@ -11,6 +11,7 @@ module.exports = function(app) {
     // They won't get this or even be able to access this page if they aren't authed
     // console.log(req.user, "this is an authenticated user")
     res.json(req.user);
+    console.log("user api routes req.user" +req.user)
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -89,7 +90,7 @@ module.exports = function(app) {
           id: req.params.id
         }
       }).then(function(dbPost) {
-      console.log("heyhey");
+      res.json(dbPost);
     });
   });
 

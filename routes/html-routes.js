@@ -66,7 +66,7 @@ module.exports = function(app) {
   app.get("/login", function(req, res) {
 
     if (req.user) {
-     return res.redirect("/survey/userID=" +req.user.id);
+     return res.redirect("/survey/?userID=" +req.user.id);
     }
      // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("login");

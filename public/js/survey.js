@@ -1,6 +1,6 @@
 var url = window.location.search;
+var userID = url.split("=")[1];
 $(function() {
-  var userID = url.split("=")[1];
 
   $("#survey-form").on("submit", function(event) {
     event.preventDefault();

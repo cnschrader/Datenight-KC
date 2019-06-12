@@ -33,8 +33,10 @@ $(document).ready(function() {
           email: emailInput.val().trim(),
           password: passwordInput.val().trim()
         }
-      }).then(function() {
-        window.location.reload();
+      }).then(function(data) {
+        window.location.replace("/login");
+        
+
         // If there's an error, handle it by throwing up a bootstrap alert
       })
     }

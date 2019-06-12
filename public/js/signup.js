@@ -34,9 +34,9 @@ $(document).ready(function() {
           password: passwordInput.val().trim()
         }
       }).then(function() {
-        window.location.replace(data);
+        window.location.reload();
         // If there's an error, handle it by throwing up a bootstrap alert
-      }).catch(handleLoginErr)
+      })
     }
   
     function handleLoginErr(err) {

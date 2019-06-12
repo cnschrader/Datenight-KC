@@ -20,9 +20,10 @@ module.exports = function(app) {
       name: req.body.name,
       email: req.body.email,
       password: req.body.password
-    }).then(function() {
+    }).then(function(dbUsers) {
       console.log("user-api-routes name= " + req.body.name);
-      res.redirect(307, "/api/login");
+      // res.redirect(307, "/login");
+      res.json(dbUsers);
     }).catch(function(err) {
       console.log(err);
       res.json(err);

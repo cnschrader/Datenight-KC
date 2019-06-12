@@ -44,7 +44,7 @@ module.exports = function(app) {
     res.render("reviews");
   });
   // signup route loads signup handlebars
-  app.get("/signup", function(req, res) {
+  app.get("/api/signup", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/signup.html"));
     res.render("signup");
   });

@@ -1,0 +1,28 @@
+<body class="surveyImg">
+  <div class="container">
+    <br>
+    <div class="row ">
+      <div class="col-12 col-sm-6">
+        <h3>Let's get started planning that perfect date!</h3>
+        <h4>Take this quick survey</h4>
+        <br>
+        <div class="card resCard">
+          <div class="card-body">
+            <ul id="example-list" class="list-group">
+              {{#each examples}}
+              <li data-id="{{this.id}}" class="list-group-item">
+                <a href="example/{{this.id}}">{{this.text}}</a>
+                <button class="btn btn-danger float-right delete">ｘ</button>
+              </li>
+              {{/each}}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/js/index.js"></script>
+  <script src="./js/survey.js"></script>
+
+</body>

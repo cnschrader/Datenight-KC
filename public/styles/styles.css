@@ -3,13 +3,10 @@
 }
 
 .site{
-  /* background: url(./img/alex-iby-371384-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%; 
-  background-color: rgb(23, 17, 17); */
   background: url(./img/kc-skyline.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 
 header{
@@ -45,11 +42,13 @@ header{
   background: url(./img/kc-skyline.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 .surveyImg{
   background: url(./img/nelson-atkins-shuttlecock-v2.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 
 .surCard{
@@ -77,6 +76,7 @@ header{
   background: url(./img/loginImg.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 
 #loginTitle, #signUpTitle{

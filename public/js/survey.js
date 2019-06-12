@@ -1,10 +1,7 @@
+var url = window.location.search;
+var userID =url.split("=")[1];
 $(function() {
-  var url = window.location.search;
-  var userID;
-  if (url.indexOf("?user_id=") !== -1) {
-    userID = url.split("=")[1];
-    return userID;
-  }
+
   $("#survey-form").on("submit", function(event) {
     event.preventDefault();
     var sports = $("[name=sportsVal]:checked").val();
@@ -20,46 +17,15 @@ $(function() {
       $("[name=outdoorsVal]:checked").val(),
       $("[name=shoppingVal]:checked").val(),
     ];
-    
-    if (
-      newSurvey.sportsRank !== "" &&
-      newSurvey.musicRank !== "" &&
-      newSurvey.comedyRank !== "" &&
-      newSurvey.museumRank !== "" &&
-      newSurvey.moviesRank !== "" &&
-      newSurvey.animalsRank !== "" &&
-      newSurvey.activeRank !== "" &&
-      newSurvey.outdoorRank !== "" &&
-      newSurvey.shoppingRank !== ""
-      ) {
-        var newScoreArray = [
-          newSurvey.sportsRank,
-          newSurvey.musicRank,
-          newSurvey.comedyRank, 
-          newSurvey.museumRank,
-          newSurvey.moviesRank,
-          newSurvey.animalsRank,
-          newSurvey.activeRank,
-          newSurvey.outdoorRank,
-          newSurvey.shoppingRank, 
-        ];
-        console.log("newScoreArray" + newScoreArray)
-        console.log("userID" + userID)
-        var userUpdate = {
-          scores: newScoreArray.sort(),
-          id: userID
-        }
-        $.ajax({
-          method: "PUT",
-          url: "/api/users/"+ userID,
-          data : newScoreArray
-        }).then(
-          function() {
-            console.log("yoyo");
-        }
-      );
-    } else {
-      alert("Please make sure that all questions are answered.")
-    }
+    newScoreArray.sort();
+
+    $.ajax({
+      type: "PUT",
+      url: "/api/users/"+ userID,
+      data : JSON.stringify(newScoreArray)
+    }).then(
+      function() {
+        console.log("yoyo");
+    });
   });
 });

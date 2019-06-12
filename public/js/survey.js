@@ -21,11 +21,11 @@ $(function() {
     $.ajax({
       type: "PUT",
       url: "/api/users/"+ userID,
-      data : newScoreArray.toString()
+      data : JSON.stringify(newScoreArray)
     }).then(
       function() {
-      // window.location.replace("/");
-      console.log('hoorya')
+      window.location.replace("/results/?userID=" + userID);
+      
     });
   });
 });

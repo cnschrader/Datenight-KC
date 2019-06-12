@@ -1,10 +1,6 @@
 var url = window.location.search;
-var userID;
-if (url.indexOf("?user_id=") !== -1) {
-  userID = url.split("=")[1];
-}
+var userID = url.split("=")[1];
 console.log(userID)
-
 $(function() {
   var suggestionsArray = [];
   var testArray = [
@@ -53,18 +49,20 @@ $(function() {
   }
   //This request gets all recommendations from the database,
   //THEN it compares them to the user's scores to sort the in order of appeal
-  $.get("api/users", function (data){
-    testArray = data.scores;
-    $.get("api/recommendations", function(res) {
-      for(var i = 0; i < testArray.length; i++) {
-        for(var j = 0 ; j < res.length; j++) {
-          if (testArray[i].substring(1) === res[j].category){
-            suggestionsArray.push(res[j]);
-          };
-        };
-      };
-      displayResults();
-    });
+  $.get("api/users/" + userID, function (data){
+    console.log("data" + data)
+    testArray = JSON.parse(data);
+    console.log("testArray " + testArray)
+    // $.get("api/recommendations", function(res) {
+    //   for(var i = 0; i < testArray.length; i++) {
+    //     for(var j = 0 ; j < res.length; j++) {
+    //       if (testArray[i].substring(1) === res[j].category){
+    //         suggestionsArray.push(res[j]);
+    //       };
+    //     };
+    //   };
+    //   displayResults();
+    // });
   })
 
   $(".get").on("click", function (event) {

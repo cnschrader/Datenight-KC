@@ -19,7 +19,23 @@ $(function() {
     "1comedy"
   ]
   function displayResults() {
-    if (testArray.length > 0){
+    if (suggestionsArray.length > 0){
+      let card = $("<div>");
+        card.addClass("card resCard");
+        card.attr("data-name", `${suggestionsArray[0].name}`);
+        card.attr("data-description", `${suggestionsArray[0].description}`);
+        card.attr("data-img", `${suggestionsArray[0].IMG}`);
+        card.attr("data-link", `${suggestionsArray[0].link}`);
+
+        let cardHeader = $("<div>").addClass("card-header");
+        cardHeader.text(suggestionsArray[0].name);
+
+        let cardBody = $("<div>").addClass("card-body");
+        cardBody.html(`<img src="${suggestionsArray[0].IMG}" class="img-fluid mx-auto d-block">`);
+
+        card.append(cardHeader, cardBody);
+        $("#result1").append(card);
+
     console.log(suggestionsArray[0].name);
     console.log(suggestionsArray[0].description);
     console.log(suggestionsArray[0].IMG);
@@ -31,6 +47,9 @@ $(function() {
   }
   function netflixAndChill() {
     //Clear everything and apologize for being unable to help
+    let noResult = $("<p>");
+      noResult.text("Sorry, we are unable to find a good event for you.  Maybe Netflix and Chill?");
+      $(".netflix").append(noResult);
   }
   //This request gets all recommendations from the database,
   //THEN it compares them to the user's scores to sort the in order of appeal

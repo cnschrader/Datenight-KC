@@ -55,7 +55,7 @@ header{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.7);
 }
-.reviews, .login{
+.reviews, .loginCard{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.9);
 }
@@ -88,9 +88,12 @@ header{
   text-align: center;
 }
 
-.login, .reviews, .surCard, .resCard{
+.loginCard, .reviews, .surCard, .resCard{
   box-shadow: 0 19px 38px 
   rgba(0,0,0,0.30), 
   0 15px 12px 
   rgba(0,0,0,0.22);
+}
+.fab{
+  color:white;
 }

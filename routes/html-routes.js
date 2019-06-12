@@ -15,9 +15,13 @@ module.exports = function(app) {
   // Each of the below routes just handles the HTML page that the user gets sent to.
 
   // index route loads view.html
-  app.get("", function(req, res) {
+  app.get("/", function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/index.html"));
-    res.render("index");
+    if (req.user) {
+      return res.render("index");
+    }
+    // res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.redirect("/signup");
   });
   // cms route loads cms.html
   // app.get("/results", function(req, res) {
@@ -30,7 +34,8 @@ module.exports = function(app) {
     res.render("results");
   });
   // survey route loads survey handlebars
-  app.get("/survey/:id?", function(req, res) {
+  
+  app.get("/survey/:id?", isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/survey.html"));
     res.render("survey");
   });
@@ -51,9 +56,21 @@ module.exports = function(app) {
   });
   // survey login loads login handlebars
   app.get("/login", function(req, res) {
-    // res.sendFile(path.join(__dirname, "../public/login.html"));
+
+    if (req.user) {
+     return res.redirect("/survey");
+    }
+     // res.sendFile(path.join(__dirname, "../public/login.html"));
     res.render("login");
   });
+
+
+  // if a user isn't logged in they will be redirected to the signup page.
+  app.get("/members", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/members.html"));
+  });
+
+
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {

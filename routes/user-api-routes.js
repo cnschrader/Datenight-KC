@@ -81,15 +81,15 @@ module.exports = function(app) {
       });
   });
 
-  app.put("/api/users", function(req, res) {
-    db.User.update(
-      req.body
-      , {
+  app.put("/api/users/:id", function(req, res) {
+    db.User.update({
+      scores: req.body.scores
+    }, {
         where: {
-          id: req.body.id
+          id: req.params.id
         }
       }).then(function(dbPost) {
-      res.json(dbPost);
+      console.log("heyhey");
     });
   });
 

@@ -3,13 +3,10 @@
 }
 
 .site{
-  /* background: url(./img/alex-iby-371384-unsplash.jpg);
-  background-repeat: no-repeat;
-  background-size: 100%; 
-  background-color: rgb(23, 17, 17); */
   background: url(./img/kc-skyline.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 
 header{
@@ -31,7 +28,7 @@ header{
   color: white
 }
 
-.survey,h2,h3, h4{
+.survey,h2,h3,h4,h5{
   color: white;
 }
 .footer{
@@ -45,11 +42,13 @@ header{
   background: url(./img/kc-skyline.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 .surveyImg{
   background: url(./img/nelson-atkins-shuttlecock-v2.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 
 .surCard{
@@ -63,6 +62,10 @@ header{
 
 #surveyBtn{
   margin-bottom: 10%;
+  box-shadow: 0 19px 38px 
+  rgba(0,0,0,0.3), 
+  0 15px 12px 
+  rgba(0,0,0,0.3);
 }
 
 .welcome{
@@ -77,6 +80,7 @@ header{
   background: url(./img/loginImg.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-color: gray;
 }
 
 #loginTitle, #signUpTitle{
@@ -85,12 +89,20 @@ header{
 }
 
 .loginTag{
+  color:white;
   text-align: center;
+  text-shadow: 1px 1px black;
 }
 
-.login, .reviews, .surCard{
+.login, .reviews, .surCard, .resCard{
   box-shadow: 0 19px 38px 
   rgba(0,0,0,0.30), 
   0 15px 12px 
   rgba(0,0,0,0.22);
+}
+.mainTag, .reviewTag, .surveyTag{
+  text-shadow: 1px 1px black;
+}
+.fab{
+  color:white;
 }

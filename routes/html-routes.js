@@ -28,8 +28,14 @@ module.exports = function(app) {
   //   res.sendFile(path.join(__dirname, "../public/results.html"));
   //   // res.render("results");
   // });
+  // results route loads results handlebars
+  app.get("/results", function(req, res) {
+    // res.sendFile(path.join(__dirname, "../public/results.html"));
+    res.render("results");
+  });
   // survey route loads survey handlebars
-  app.get("/survey", isAuthenticated, function(req, res) {
+  
+  app.get("/survey/:id?", isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/survey.html"));
     res.render("survey");
   });

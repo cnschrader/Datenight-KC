@@ -55,7 +55,7 @@ header{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.7);
 }
-.reviews, .loginCard{
+.reviews, .loginCard, .login{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.9);
 }

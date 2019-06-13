@@ -55,7 +55,7 @@ header{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.7);
 }
-.reviews, .loginCard{
+.reviews, .loginCard, .login{
   margin-bottom: 4%;
   background-color: rgba(245, 245, 245, 0.9);
 }
@@ -88,13 +88,13 @@ header{
   text-align: center;
 }
 
-.loginTag{
+.loginTag, .resultsTag{
   color:white;
   text-align: center;
   text-shadow: 1px 1px black;
 }
 
-.loginCard, .reviews, .surCard, .resCard{
+.loginCard, .reviews, .surCard{
   box-shadow: 0 19px 38px 
   rgba(0,0,0,0.30), 
   0 15px 12px 
@@ -107,4 +107,19 @@ header{
 .fab{
   color:white;
 }
-
+#description{
+  color: black;
+}
+.resCard{
+  text-align: center;
+  margin-bottom: 4%;
+  padding-bottom: 4%;
+  background-color: rgba(245, 245, 245, 0.7);
+  box-shadow: 0 19px 38px 
+  rgba(0,0,0,0.30), 
+  0 15px 12px 
+  rgba(0,0,0,0.22);
+}
+.card img{
+  max-width:90%;
+}

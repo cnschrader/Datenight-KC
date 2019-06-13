@@ -53,7 +53,8 @@ $(function() {
     // console.log("data = " + data.scores)
     var result = data.scores.replace(/[{}":]+/g, "")
     // console.log("result = " + result)
-    var testArray = result.split(',')
+    // var testArray = $.makeArray(result)
+    var testArray = result.split(',');
     console.log("testArray = " + testArray)
     // $.get("api/recommendations", function(res) {
     //   for(var i = 0; i < testArray.length; i++) {

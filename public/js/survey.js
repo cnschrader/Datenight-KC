@@ -15,6 +15,7 @@ $(function() {
       $("[name=outdoorsVal]:checked").val(),
       $("[name=shoppingVal]:checked").val().trim()];
     newScoreArray.sort();
+    newScoreArray.reverse();
     console.log(userID)
     console.log(newScoreArray);
     $.ajax({

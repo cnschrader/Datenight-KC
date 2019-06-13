@@ -66,13 +66,14 @@ module.exports = function(app) {
   });
 
   app.get("/api/users/:id", function(req, res) {
-    db.User.findOneAll({
+    var userID = req.params.id
+    console.log("userID" + userID)
+    db.Users.findOne({
       where: {
-        id: req.params.id
+        id: userID
       },
-    }).then(function(dbUser) {
-      console.log("dbUser.scores" + dbUser.scores)
-      res.json(dbUser);
+    }).then(function(data) {
+      res.json(data);
     });
   });
 

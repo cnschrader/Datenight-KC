@@ -26,6 +26,10 @@ $(function() {
     }
   };
   function netflixAndChill() {
+    $("#name").empty()
+    $("#description").empty()
+    $("#IMG").empty()
+    $("#link").empty()
     //empty everything and apologize for being unable to help
     let noResult = $("<p>");
       noResult.text("Sorry, we are unable to find a good event for you.  Maybe Netflix and Chill?");

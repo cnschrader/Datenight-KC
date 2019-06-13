@@ -34,7 +34,7 @@ module.exports = function(app) {
   //   // res.render("results");
   // });
   // results route loads results handlebars
-  app.get("/results/:userID?", function(req, res) {
+  app.get("/results/:userID?" , isAuthenticated, function(req, res) {
     // res.sendFile(path.join(__dirname, "../public/results.html"));
     res.render("results");
   });

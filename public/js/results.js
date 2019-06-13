@@ -49,10 +49,12 @@ $(function() {
   }
   //This request gets all recommendations from the database,
   //THEN it compares them to the user's scores to sort the in order of appeal
-  $.get("api/users/" + userID, function (data){
-    console.log("data" + data)
-    testArray = JSON.parse(data);
-    console.log("testArray " + testArray)
+  $.get("/api/users/" + userID, function (data){
+    // console.log("data = " + data.scores)
+    var result = data.scores.replace(/[{}":]+/g, "")
+    // console.log("result = " + result)
+    var testArray = result.split(',')
+    console.log("testArray = " + testArray)
     // $.get("api/recommendations", function(res) {
     //   for(var i = 0; i < testArray.length; i++) {
     //     for(var j = 0 ; j < res.length; j++) {

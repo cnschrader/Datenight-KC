@@ -13,19 +13,18 @@ $(function() {
       $("[name=animalsVal]:checked").val(),
       $("[name=activeVal]:checked").val(),
       $("[name=outdoorsVal]:checked").val(),
-      $("[name=shoppingVal]:checked").val(),
-    ];
+      $("[name=shoppingVal]:checked").val().trim()];
     newScoreArray.sort();
     console.log(userID)
     console.log(newScoreArray);
     $.ajax({
       type: "PUT",
       url: "/api/users/"+ userID,
-      data : JSON.stringify(newScoreArray)
+      data : newScoreArray.toString()
     }).then(
       function() {
       window.location.replace("/results/?userID=" + userID);
-      
+      console.log("yo")
     });
   });
 });

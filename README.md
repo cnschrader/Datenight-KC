@@ -21,7 +21,7 @@
 
  ## Installation
  Clone the repository using this link:
- 
+
  `https://github.com/cnschrader/Datenight-KC.git`
 
  This application uses MySQL, so you will need to download this for the project. You can find documentation on MySQL and MySQL Workbench at:
@@ -37,6 +37,14 @@
 
 ## Authors
 To see all contributors, click [here](https://github.com/cnschrader/Datenight-KC/graphs/contributors).
+
+## Updates on development
+
+This is a Minimal Viable Product (MVP). There are some things that we would like to update in the future including but not limited to:
+
+- Creating a more mobile friendly version.
+- Give the users a more full date plan.
+- Update UX/UI.
 
 
  

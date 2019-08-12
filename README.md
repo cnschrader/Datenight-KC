@@ -1,20 +1,9 @@
-# Project_2
-The requirements for Project #2 are as follows:
+#Date Night KC
 
-Must use a Node and Express Web Server
+ ##About the application
+ Have you ever wanted to plan that perfect date night for your partner, but didn't know where to start? Have you ever spent a lot of time reading article after article, trying to find the best spot in town for your favorite activity? Date Night Kc seeks to solve that problem by planning the date for the user. Simply take a brief survey about your (or your partners) interests, and the app does the rest! The suggestions the user is given can either be accepted or vetoed. If vetoed, another suggestion will pop up! It's pretty simple to use. 
 
-Must be backed by a MySQL Database with a Sequelize ORM
+ ##Technologies used in this app
+ This is a full stack application that uses HTML5, CSS3, Bootstrap, Javascript, JQuery,Handlebars, Node.js, Express, Passport.js, and Bcrypt.
 
-Must have both GET and POST routes for retrieving and adding new data
-
-Must be deployed using Heroku (with Data)
-
-Must utilize at least one new library, package, or technology that we haven't discussed
-
-Must have a polished frontend / UI
-
-Must have folder structure that meets MVC Paradigm
-
-Must meet good quality coding standards (indentation, scoping, naming)
-
-Must not expose sensitive API key information on the server, see Protecting-API-Keys-In-Node.md
+ This full stack application uses HTML5, CSS3, Bootstrap, Javascript, and JQuery on the front end.  

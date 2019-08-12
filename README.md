@@ -6,4 +6,4 @@
  ##Technologies used in this app
  This is a full stack application that uses HTML5, CSS3, Bootstrap, Javascript, JQuery,Handlebars, Node.js, Express, Passport.js, and Bcrypt.
 
- This full stack application uses HTML5, CSS3, Bootstrap, Javascript, and JQuery on the front end.  
+ 

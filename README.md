@@ -16,6 +16,26 @@
  - Passport.js: Authentication middleware
  - Bcrypt: Password encryption
 
+ # Getting Started
+ Below are instructions on how to install this project on your local machine.
+
+ ## Installation
+ Clone the repository using this link:
+ `https://github.com/cnschrader/Datenight-KC.git`
+
+ This application uses MySQL, so you will need to download this for the project. You can find documentation on MySQL and MySQL Workbench at:
+
+ `https://dev.mysql.com/doc/`
+
+ Install the necessary dependencies by running:
+
+ `npm install`
+
+
+
+
 ## Authors
-To see all contributors, click [here](https://github.com/cnschrader/Datenight-KC/graphs/contributors)
+To see all contributors, click [here](https://github.com/cnschrader/Datenight-KC/graphs/contributors).
+
+
  

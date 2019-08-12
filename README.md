@@ -10,9 +10,12 @@
  - Handlebars: Templating Engine
  - Node.js: JavaScript runtime
  - Express.js: Node.js framework 
+ - NPM: Package management
  - MySQL: Database
  - Sequelize: Mature ORM
  - Passport.js: Authentication middleware
  - Bcrypt: Password encryption
 
+## Authors
+To see all contributors, click [here](https://github.com/cnschrader/Datenight-KC/graphs/contributors)
  

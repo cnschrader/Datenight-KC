@@ -21,6 +21,7 @@
 
  ## Installation
  Clone the repository using this link:
+ 
  `https://github.com/cnschrader/Datenight-KC.git`
 
  This application uses MySQL, so you will need to download this for the project. You can find documentation on MySQL and MySQL Workbench at:
